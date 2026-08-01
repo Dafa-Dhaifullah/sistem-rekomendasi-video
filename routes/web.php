@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VideoRecommendationController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('/mata-kuliah/{mataKuliahId}/generate-recommendations', [VideoRecommendationController::class, 'generateRecommendation'])
+    ->name('recommendations.generate');
+
